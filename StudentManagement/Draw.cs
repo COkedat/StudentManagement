@@ -13,5 +13,9 @@ namespace StudentManagement {
         public Draw() {
             InitializeComponent();
         }
+
+        private void Draw_Load(object sender, EventArgs e) {
+
+        }
     }
 }
