@@ -75,6 +75,9 @@
     <EmbeddedResource Include="Draw.resx">
       <DependentUpon>Draw.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grade.resx">
+      <DependentUpon>Grade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
