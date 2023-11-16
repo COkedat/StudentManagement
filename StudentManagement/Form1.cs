@@ -10,6 +10,17 @@ using System.Windows.Forms;
 
 namespace StudentManagement {
 
+    
+    public partial class Form1 : Form {
+        public Form1() {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e) {
+
+        }
+    }
+
     // 학생 클래스
     public class Student {
         public Student() { }
@@ -50,14 +61,14 @@ namespace StudentManagement {
         private int group;
 
         // 번호 이름 프로퍼티
-        public int Id { get { return id; } set {  id = value; } }
+        public int Id { get { return id; } set { id = value; } }
         public string Name { get { return name; } set { name = value; } }
 
         // 점수 프로퍼티
-        public int Kor { get {  return kor; } set {  kor = value; } }
-        public int Eng { get {  return eng; } set {  eng = value; } }
-        public int Math { get { return math; } set {  math = value; } }
-        public int Social { get {  return social; } set {  social = value; } }
+        public int Kor { get { return kor; } set { kor = value; } }
+        public int Eng { get { return eng; } set { eng = value; } }
+        public int Math { get { return math; } set { math = value; } }
+        public int Social { get { return social; } set { social = value; } }
         public int Sci { get { return sci; } set { sci = value; } }
 
         // 출석 및 결석 프로퍼티
@@ -65,7 +76,7 @@ namespace StudentManagement {
         public int Absent { get { return absent; } set { absent = value; } }
 
         // 그룹(조) 번호 프로퍼티
-        public int Group { get { return group; } set { group = value; } }   
+        public int Group { get { return group; } set { group = value; } }
 
         // 출석 결석 증가
         public void AddAtten() {
@@ -75,14 +86,5 @@ namespace StudentManagement {
             Absent++;
         }
 
-    }
-    public partial class Form1 : Form {
-        public Form1() {
-            InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e) {
-
-        }
     }
 }

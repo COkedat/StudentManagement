@@ -46,9 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs" />
+    <Compile Include="Atten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Atten.Designer.cs">
+      <DependentUpon>Atten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Draw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Draw.Designer.cs">
+      <DependentUpon>Draw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grade.Designer.cs">
+      <DependentUpon>Grade.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
