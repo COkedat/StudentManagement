@@ -72,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Atten.resx">
+      <DependentUpon>Atten.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Draw.resx">
       <DependentUpon>Draw.cs</DependentUpon>
     </EmbeddedResource>
