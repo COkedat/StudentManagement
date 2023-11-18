@@ -13,16 +13,30 @@ namespace StudentManagement {
         public Grade() {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e) {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e) {
-
-        }
-
         private void Grade_Load(object sender, EventArgs e) {
+            // 해당 창이 로드 될 경우
+            // 메인 학생 목록에서 가져옴
+            listBox1.Items.Clear();
+            //listBox1.Items.AddRange();
+        }
+        private void button1_Click(object sender, EventArgs e) {
+            // 저장 버튼 클릭시
+
+            // 점수들 중 변경된 점수를 클래스에 저장 (todo)
+
+
+            // 변경 내역 보고
+            label9.Text = "";
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e) {
+            // 리스트박스에서 아무 학생이나 선택 시
+
+            // 저장 버튼 활성화
+            button1.Enabled = true;
+
+            // 선택된 학생의 점수들을 텍스트 박스에 저장
 
         }
     }
