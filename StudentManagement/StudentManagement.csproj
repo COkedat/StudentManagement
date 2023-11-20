@@ -112,6 +112,9 @@
     <EmbeddedResource Include="Draw.resx">
       <DependentUpon>Draw.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Edit.resx">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grade.resx">
       <DependentUpon>Grade.cs</DependentUpon>
     </EmbeddedResource>

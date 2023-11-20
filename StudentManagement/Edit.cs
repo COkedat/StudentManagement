@@ -13,5 +13,9 @@ namespace StudentManagement {
         public Edit() {
             InitializeComponent();
         }
+
+        private void btnSave_Click(object sender, EventArgs e) {
+            // 저장 버튼
+        }
     }
 }
