@@ -21,6 +21,7 @@ namespace StudentManagement {
             InitializeComponent();
             this.main = main;
         }
+
         private void Grade_Load(object sender, EventArgs e) {
             // 해당 창이 로드 될 경우
             // 메인 학생 목록에서 가져옴
@@ -44,26 +45,38 @@ namespace StudentManagement {
                 tmpSci = main.students[selectedIdx].Sci = ((int)numericScoreSci.Value);
 
                 // 변경 내역 보고
-                labelChanged.Text = main.students[selectedIdx].Name + " 학생의 점수가 저장되었습니다.";
+                labelChanged.Text = main.students[selectedIdx].Name + " 학생의 점수가 \n저장되었습니다.";
             }
             else
                 MessageBox.Show("점수 변경 내역이 없습니다!", "알림", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e) {
-            // 리스트박스에서 아무 학생이나 선택 시
-            selectedIdx = listStudents.SelectedIndex;
-
             // 저장 버튼 활성화
             btnScoreSave.Enabled = true;
+
+            // 값이 다르고 선택된 인덱스가 바뀌었다면
+            if (isChanged() && listStudents.SelectedIndex != selectedIdx) {
+                DialogResult dialogResult = MessageBox.Show("변경 사항이 있습니다! \n 무시하고 진행하시겠습니까?", "알림", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                //OK 클릭할 경우 그냥 진행
+                //Cancel 클릭 시
+                if (dialogResult == DialogResult.Cancel) {
+                    // 원래대로 돌아감
+                    listStudents.SelectedIndex = selectedIdx;
+                    return;
+                }
+            }
+            // 리스트박스에서 아무 학생이나 선택 시
+            selectedIdx = listStudents.SelectedIndex;
 
             // 선택된 학생의 점수들을 입력 창에 띄움
             // 임시 점수 변수에도 저장
             numericScoreKor.Value = tmpKor = main.students[selectedIdx].Kor;
             numericScoreEng.Value = tmpEng = main.students[selectedIdx].Eng;
-            numericScoreMath.Value = tmpMath= main.students[selectedIdx].Math;
-            numericScoreSocial.Value = tmpSocial= main.students[selectedIdx].Social;
-            numericScoreSci.Value = tmpSci= main.students[selectedIdx].Sci;
+            numericScoreMath.Value = tmpMath = main.students[selectedIdx].Math;
+            numericScoreSocial.Value = tmpSocial = main.students[selectedIdx].Social;
+            numericScoreSci.Value = tmpSci = main.students[selectedIdx].Sci;
+
 
             // 입력 활성화
             numericScoreKor.Enabled = true;
@@ -71,6 +84,7 @@ namespace StudentManagement {
             numericScoreMath.Enabled = true;
             numericScoreSocial.Enabled = true;
             numericScoreSci.Enabled = true;
+
         }
 
         // 값의 변화가 있었는지 체크하는 함수

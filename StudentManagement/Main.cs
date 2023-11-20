@@ -66,8 +66,8 @@ namespace StudentManagement {
         }
 
         private void btnMainMoveAtten_Click(object sender, EventArgs e) {
-            Atten attenForm = new Atten();
-            attenForm.Show();
+            //Atten attenForm = new Atten();
+            //attenForm.Show();
         }
 
         // 정보 변경 시마다 정보를 최신화 시키는 함수
@@ -80,7 +80,6 @@ namespace StudentManagement {
             // 학생 정보 최신화
             lBMainStudents.Items.Clear();
             foreach (var student in students) {
-                
                 lBMainStudents.Items.Add(student.ToString());
             }
         }
@@ -88,6 +87,12 @@ namespace StudentManagement {
         private void editGrade_Click(object sender, EventArgs e) {
             Grade grade = new Grade(this);
             grade.ShowDialog();
+            autoUpdate();
+        }
+
+        private void editAtten_Click(object sender, EventArgs e) {
+            Atten atten = new Atten(this);
+            atten.ShowDialog();
             autoUpdate();
         }
     }
