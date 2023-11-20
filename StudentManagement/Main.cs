@@ -24,7 +24,11 @@ namespace StudentManagement {
 
         private void save_Click(object sender, EventArgs e) {
             // 학생 정보 저장 버튼
+            // serialize
+            // string json = JsonSerializer.Serialize(students, new JsonSerializerOptions { WriteIndented = true });
 
+            // save
+            //File.WriteAllText("students.json", json);
         }
 
         private void load_Click(object sender, EventArgs e) {
@@ -37,6 +41,8 @@ namespace StudentManagement {
             foreach (var student in studentsFromJson) {
                 Console.WriteLine($"번호: {student.Id}, 이름: {student.Name}, 국어: {student.Kor}, 영어: {student.Eng}, 수학: {student.Math}, 사회: {student.Social}, 과학: {student.Sci}, 출석: {student.Atten}, 결석: {student.Absent}, 조: {student.Group}");
             }
+
+
         }
     }
 
