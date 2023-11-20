@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,6 +19,23 @@ namespace StudentManagement {
 
         private void Form1_Load(object sender, EventArgs e) {
 
+        }
+
+        private void save_Click(object sender, EventArgs e) {
+            // 학생 정보 저장 버튼
+
+        }
+
+        private void load_Click(object sender, EventArgs e) {
+            // 학생 정보 불러오기 버튼
+            string jsonFromFile = File.ReadAllText("students.json");
+
+            // deserialize
+            List<Student> studentsFromJson = JsonSerializer.Deserialize<List<Student>>(jsonFromFile);
+
+            foreach (var student in studentsFromJson) {
+                Console.WriteLine($"번호: {student.Id}, 이름: {student.Name}, 국어: {student.Kor}, 영어: {student.Eng}, 수학: {student.Math}, 사회: {student.Social}, 과학: {student.Sci}, 출석: {student.Atten}, 결석: {student.Absent}, 조: {student.Group}");
+            }
         }
     }
 
@@ -87,4 +105,8 @@ namespace StudentManagement {
         }
 
     }
+    
+
+
+
 }
