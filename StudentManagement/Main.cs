@@ -65,9 +65,14 @@ namespace StudentManagement {
             File.WriteAllText("students.json", json);
         }
 
-        private void btnMainMoveAtten_Click(object sender, EventArgs e) {
-            //Atten attenForm = new Atten();
-            //attenForm.Show();
+
+        private void btnMainMoveAdd_Click(object sender, EventArgs e) {
+            // 추가 시
+
+        }
+        private void btnMainMoveEdit_Click(object sender, EventArgs e) {
+            // 수정 시
+
         }
 
         // 정보 변경 시마다 정보를 최신화 시키는 함수
@@ -114,6 +119,28 @@ namespace StudentManagement {
                 lBMainStudents.Items.Add(student.ToString());
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e) {
+            if (lBMainStudents.SelectedIndex != -1) {
+                DialogResult dialogResult = MessageBox.Show("선택된 학생을 목록에서 제거하시겠습니까?", "알림", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                //OK 클릭할 경우 그냥 진행
+                if (dialogResult == DialogResult.OK) {
+                    students.RemoveAt(lBMainStudents.SelectedIndex);
+                    MessageBox.Show("선택된 학생이 목록에서 제거되었습니다!", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                //Cancel 클릭 시
+                if (dialogResult == DialogResult.Cancel) {
+                    return;
+                }
+            }
+            else { 
+                MessageBox.Show("선택된 학생이 없습니다!", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            autoUpdate();
+        }
+
+        
     }
 
     // 학생 클래스
