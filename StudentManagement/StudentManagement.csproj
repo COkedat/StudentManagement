@@ -86,6 +86,12 @@
     <Compile Include="Draw.Designer.cs">
       <DependentUpon>Draw.cs</DependentUpon>
     </Compile>
+    <Compile Include="Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit.Designer.cs">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
