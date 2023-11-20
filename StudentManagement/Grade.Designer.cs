@@ -23,14 +23,9 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listStudents = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.btnScoreSave = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,19 +34,29 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.labelChanged = new System.Windows.Forms.Label();
+            this.numericScoreKor = new System.Windows.Forms.NumericUpDown();
+            this.numericScoreEng = new System.Windows.Forms.NumericUpDown();
+            this.numericScoreMath = new System.Windows.Forms.NumericUpDown();
+            this.numericScoreSocial = new System.Windows.Forms.NumericUpDown();
+            this.numericScoreSci = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericScoreKor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericScoreEng)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericScoreMath)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericScoreSocial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericScoreSci)).BeginInit();
             this.SuspendLayout();
             // 
-            // listBox1
+            // listStudents
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(23, 43);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(165, 469);
-            this.listBox1.TabIndex = 0;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.listStudents.FormattingEnabled = true;
+            this.listStudents.ItemHeight = 15;
+            this.listStudents.Location = new System.Drawing.Point(23, 43);
+            this.listStudents.Name = "listStudents";
+            this.listStudents.Size = new System.Drawing.Size(165, 469);
+            this.listStudents.TabIndex = 0;
+            this.listStudents.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -62,56 +67,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "학생 목록";
             // 
-            // button1
+            // btnScoreSave
             // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(48, 217);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "저장";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(63, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 25);
-            this.textBox1.TabIndex = 3;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(63, 88);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 25);
-            this.textBox2.TabIndex = 3;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(63, 119);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 25);
-            this.textBox3.TabIndex = 3;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(63, 150);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 25);
-            this.textBox4.TabIndex = 3;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(63, 181);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 25);
-            this.textBox5.TabIndex = 3;
+            this.btnScoreSave.Enabled = false;
+            this.btnScoreSave.Location = new System.Drawing.Point(48, 217);
+            this.btnScoreSave.Name = "btnScoreSave";
+            this.btnScoreSave.Size = new System.Drawing.Size(75, 23);
+            this.btnScoreSave.TabIndex = 2;
+            this.btnScoreSave.Text = "저장";
+            this.btnScoreSave.UseVisualStyleBackColor = true;
+            this.btnScoreSave.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -160,18 +125,18 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.numericScoreSci);
+            this.panel1.Controls.Add(this.numericScoreSocial);
+            this.panel1.Controls.Add(this.numericScoreMath);
+            this.panel1.Controls.Add(this.numericScoreEng);
+            this.panel1.Controls.Add(this.numericScoreKor);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnScoreSave);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Location = new System.Drawing.Point(205, 43);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(184, 255);
@@ -196,29 +161,74 @@
             this.label8.TabIndex = 6;
             this.label8.Text = "변경사항";
             // 
-            // label9
+            // labelChanged
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(205, 328);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 15);
-            this.label9.TabIndex = 6;
+            this.labelChanged.AutoSize = true;
+            this.labelChanged.Location = new System.Drawing.Point(205, 328);
+            this.labelChanged.Name = "labelChanged";
+            this.labelChanged.Size = new System.Drawing.Size(0, 15);
+            this.labelChanged.TabIndex = 6;
+            // 
+            // numericScoreKor
+            // 
+            this.numericScoreKor.Enabled = false;
+            this.numericScoreKor.Location = new System.Drawing.Point(57, 58);
+            this.numericScoreKor.Name = "numericScoreKor";
+            this.numericScoreKor.Size = new System.Drawing.Size(95, 25);
+            this.numericScoreKor.TabIndex = 6;
+            // 
+            // numericScoreEng
+            // 
+            this.numericScoreEng.Enabled = false;
+            this.numericScoreEng.Location = new System.Drawing.Point(57, 88);
+            this.numericScoreEng.Name = "numericScoreEng";
+            this.numericScoreEng.Size = new System.Drawing.Size(95, 25);
+            this.numericScoreEng.TabIndex = 6;
+            // 
+            // numericScoreMath
+            // 
+            this.numericScoreMath.Enabled = false;
+            this.numericScoreMath.Location = new System.Drawing.Point(57, 118);
+            this.numericScoreMath.Name = "numericScoreMath";
+            this.numericScoreMath.Size = new System.Drawing.Size(95, 25);
+            this.numericScoreMath.TabIndex = 6;
+            // 
+            // numericScoreSocial
+            // 
+            this.numericScoreSocial.Enabled = false;
+            this.numericScoreSocial.Location = new System.Drawing.Point(57, 148);
+            this.numericScoreSocial.Name = "numericScoreSocial";
+            this.numericScoreSocial.Size = new System.Drawing.Size(95, 25);
+            this.numericScoreSocial.TabIndex = 6;
+            // 
+            // numericScoreSci
+            // 
+            this.numericScoreSci.Enabled = false;
+            this.numericScoreSci.Location = new System.Drawing.Point(57, 179);
+            this.numericScoreSci.Name = "numericScoreSci";
+            this.numericScoreSci.Size = new System.Drawing.Size(95, 25);
+            this.numericScoreSci.TabIndex = 6;
             // 
             // Grade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 536);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.labelChanged);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listStudents);
             this.Name = "Grade";
             this.Text = "성적 관리";
             this.Load += new System.EventHandler(this.Grade_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericScoreKor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericScoreEng)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericScoreMath)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericScoreSocial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericScoreSci)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,14 +236,9 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listStudents;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button btnScoreSave;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -242,6 +247,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelChanged;
+        private System.Windows.Forms.NumericUpDown numericScoreSci;
+        private System.Windows.Forms.NumericUpDown numericScoreSocial;
+        private System.Windows.Forms.NumericUpDown numericScoreMath;
+        private System.Windows.Forms.NumericUpDown numericScoreEng;
+        private System.Windows.Forms.NumericUpDown numericScoreKor;
     }
 }

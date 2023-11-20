@@ -70,12 +70,25 @@ namespace StudentManagement {
             attenForm.Show();
         }
 
-        // 정보 변경 시마다 Id를 최신화 시키는 함수
-        // 인덱스 번호를 기준으로 동기화 시킴 ( 인덱스 번호 +1 )
-        private void autoIdxtoId() {
-            for(int i=0; i<students.Count; i++) {
+        // 정보 변경 시마다 정보를 최신화 시키는 함수
+        private void autoUpdate() {
+            // 인덱스 번호를 기준으로 동기화 시킴 ( 인덱스 번호 +1 )
+            for (int i=0; i<students.Count; i++) {
                 students[i].Id = i + 1;
             }
+
+            // 학생 정보 최신화
+            lBMainStudents.Items.Clear();
+            foreach (var student in students) {
+                
+                lBMainStudents.Items.Add(student.ToString());
+            }
+        }
+
+        private void editGrade_Click(object sender, EventArgs e) {
+            Grade grade = new Grade(this);
+            grade.ShowDialog();
+            autoUpdate();
         }
     }
 

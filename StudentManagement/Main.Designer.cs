@@ -25,32 +25,47 @@
         private void InitializeComponent() {
             this.lBMainStudents = new System.Windows.Forms.ListBox();
             this.btnMainMoveAtten = new System.Windows.Forms.Button();
+            this.editGrade = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lBMainStudents
             // 
             this.lBMainStudents.FormattingEnabled = true;
-            this.lBMainStudents.ItemHeight = 12;
-            this.lBMainStudents.Location = new System.Drawing.Point(12, 38);
+            this.lBMainStudents.ItemHeight = 15;
+            this.lBMainStudents.Location = new System.Drawing.Point(14, 48);
+            this.lBMainStudents.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lBMainStudents.Name = "lBMainStudents";
-            this.lBMainStudents.Size = new System.Drawing.Size(545, 256);
+            this.lBMainStudents.Size = new System.Drawing.Size(622, 319);
             this.lBMainStudents.TabIndex = 0;
             // 
             // btnMainMoveAtten
             // 
-            this.btnMainMoveAtten.Location = new System.Drawing.Point(563, 38);
+            this.btnMainMoveAtten.Location = new System.Drawing.Point(643, 48);
+            this.btnMainMoveAtten.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMainMoveAtten.Name = "btnMainMoveAtten";
-            this.btnMainMoveAtten.Size = new System.Drawing.Size(125, 23);
+            this.btnMainMoveAtten.Size = new System.Drawing.Size(143, 29);
             this.btnMainMoveAtten.TabIndex = 1;
             this.btnMainMoveAtten.Text = "추가/수정";
             this.btnMainMoveAtten.UseVisualStyleBackColor = true;
             this.btnMainMoveAtten.Click += new System.EventHandler(this.btnMainMoveAtten_Click);
             // 
+            // editGrade
+            // 
+            this.editGrade.Location = new System.Drawing.Point(643, 85);
+            this.editGrade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.editGrade.Name = "editGrade";
+            this.editGrade.Size = new System.Drawing.Size(143, 29);
+            this.editGrade.TabIndex = 1;
+            this.editGrade.Text = "성적 관리";
+            this.editGrade.UseVisualStyleBackColor = true;
+            this.editGrade.Click += new System.EventHandler(this.editGrade_Click);
+            // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 360);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.editGrade);
             this.Controls.Add(this.btnMainMoveAtten);
             this.Controls.Add(this.lBMainStudents);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -65,6 +80,7 @@
 
         private System.Windows.Forms.ListBox lBMainStudents;
         private System.Windows.Forms.Button btnMainMoveAtten;
+        private System.Windows.Forms.Button editGrade;
     }
 }
 
