@@ -17,7 +17,12 @@ namespace StudentManagement {
             // 해당 창이 로드 될 경우
             // 메인 학생 목록에서 가져옴
             listBox1.Items.Clear();
-            //listBox1.Items.AddRange();
+            Main main = new Main();
+
+            foreach(var student in main.students) {
+                listBox1.Items.Add(student.Name);
+            }
+            
         }
         private void button1_Click(object sender, EventArgs e) {
             // 저장 버튼 클릭시
