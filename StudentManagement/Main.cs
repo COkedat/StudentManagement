@@ -95,6 +95,25 @@ namespace StudentManagement {
             atten.ShowDialog();
             autoUpdate();
         }
+
+        private void btnMainMoveDraw_Click(object sender, EventArgs e) {
+            Draw drawForm = new Draw(this);
+            drawForm.GroupsAssigned += UpdateGroups; //이벤트 핸들러 등록
+            drawForm.Show();
+            autoUpdate();
+        }
+
+        // 이벤트 핸들러
+        private void UpdateGroups(List<Student> updatedStudents) {
+            // 학생들의 조 정보 업데이트
+            students = updatedStudents;
+
+            // 업데이트된 정보로 ListBox 갱신
+            lBMainStudents.Items.Clear();
+            foreach (var student in students) {
+                lBMainStudents.Items.Add(student.ToString());
+            }
+        }
     }
 
     // 학생 클래스

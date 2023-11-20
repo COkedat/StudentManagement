@@ -27,6 +27,7 @@
             this.btnMainMoveAtten = new System.Windows.Forms.Button();
             this.editGrade = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnDraw = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lBMainStudents
@@ -72,11 +73,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.editAtten_Click);
             // 
+            // btnDraw
+            // 
+            this.btnDraw.Location = new System.Drawing.Point(643, 159);
+            this.btnDraw.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDraw.Name = "btnDraw";
+            this.btnDraw.Size = new System.Drawing.Size(143, 29);
+            this.btnDraw.TabIndex = 1;
+            this.btnDraw.Text = "추첨";
+            this.btnDraw.UseVisualStyleBackColor = true;
+            this.btnDraw.Click += new System.EventHandler(this.btnMainMoveDraw_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDraw);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.editGrade);
             this.Controls.Add(this.btnMainMoveAtten);
@@ -95,6 +108,7 @@
         private System.Windows.Forms.Button btnMainMoveAtten;
         private System.Windows.Forms.Button editGrade;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDraw;
     }
 }
 
