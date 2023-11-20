@@ -1,48 +1,73 @@
 ﻿using System;
+using System.Runtime.Serialization;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.IO;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StudentManagement {
 
-    
+
     public partial class Main : Form {
+        public List<Student> students;
         public Main() {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e) {
+            students = GetStudents();
 
-        }
-
-        private void save_Click(object sender, EventArgs e) {
-            // 학생 정보 저장 버튼
-            // serialize
-            // string json = JsonSerializer.Serialize(students, new JsonSerializerOptions { WriteIndented = true });
-
-            // save
-            //File.WriteAllText("students.json", json);
-        }
-
-        private void load_Click(object sender, EventArgs e) {
-            // 학생 정보 불러오기 버튼
-            string jsonFromFile = File.ReadAllText("students.json");
-
-            // deserialize
-            List<Student> studentsFromJson = JsonSerializer.Deserialize<List<Student>>(jsonFromFile);
-
-            foreach (var student in studentsFromJson) {
-                Console.WriteLine($"번호: {student.Id}, 이름: {student.Name}, 국어: {student.Kor}, 영어: {student.Eng}, 수학: {student.Math}, 사회: {student.Social}, 과학: {student.Sci}, 출석: {student.Atten}, 결석: {student.Absent}, 조: {student.Group}");
+            if (students == null) {
+                InitializeStudentsJson();                                             // make sample json
+                students = GetStudents();
             }
 
+            foreach (var student in students) {
+                lBMainStudents.Items.Add(student.ToString());
+            }
+        }
 
+        private List<Student> GetStudents() {
+            try {
+                string jsonFromFile = File.ReadAllText("students.json");            // get some file
+                return JsonSerializer.Deserialize<List<Student>>(jsonFromFile);
+            }
+            catch (Exception ex)                                                    // no file | deserialize failed
+            {
+                Console.WriteLine($"exception: {ex.Message}");
+                return null;
+            }
+        }
+
+        // sample students.json maker
+        private void InitializeStudentsJson() {
+            string json;
+
+            List<Student> studentsTemp = new List<Student>
+                    {
+                        new Student(1, "김종천", 98, 76, 88, 67, 100, 0, 0, 0),
+                        new Student(2, "서강민", 87, 65, 52, 74, 47, 0, 0, 0),
+                        new Student(3, "강종제", 96, 42, 53, 89, 96, 0, 0, 0),
+                        new Student(4, "허상수", 92, 98, 75, 68, 67, 0, 0, 0),
+                        new Student(5, "최명조", 100, 76, 96, 62, 23, 0, 0, 0),
+                        new Student(6, "김나눔", 22, 4, 34, 29, 14, 0, 0, 0)
+                    };
+
+            json = JsonSerializer.Serialize(studentsTemp, new JsonSerializerOptions { WriteIndented = true });
+
+            // save
+            File.WriteAllText("students.json", json);
+        }
+
+        private void btnMainMoveAtten_Click(object sender, EventArgs e) {
+            Atten attenForm = new Atten();
+            attenForm.Show();
         }
     }
 
@@ -110,10 +135,8 @@ namespace StudentManagement {
         public void AddAbsent() {
             Absent++;
         }
-
+        public override string ToString() {
+            return $"{Id}: {Name}, 국어: {Kor}, 영어: {Eng}, 수학: {Math}, 사회: {Social}, 과학: {Sci}, 출석: {Atten}, 결석: {Absent}, 조: {Group}";
+        }
     }
-    
-
-
-
 }

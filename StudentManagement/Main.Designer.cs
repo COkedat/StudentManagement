@@ -23,14 +23,38 @@
         /// 이 메서드의 내용을 코드 편집기로 수정하지 마세요.
         /// </summary>
         private void InitializeComponent() {
+            this.lBMainStudents = new System.Windows.Forms.ListBox();
+            this.btnMainMoveAtten = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Form1
+            // lBMainStudents
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.lBMainStudents.FormattingEnabled = true;
+            this.lBMainStudents.ItemHeight = 12;
+            this.lBMainStudents.Location = new System.Drawing.Point(12, 38);
+            this.lBMainStudents.Name = "lBMainStudents";
+            this.lBMainStudents.Size = new System.Drawing.Size(545, 256);
+            this.lBMainStudents.TabIndex = 0;
+            // 
+            // btnMainMoveAtten
+            // 
+            this.btnMainMoveAtten.Location = new System.Drawing.Point(563, 38);
+            this.btnMainMoveAtten.Name = "btnMainMoveAtten";
+            this.btnMainMoveAtten.Size = new System.Drawing.Size(125, 23);
+            this.btnMainMoveAtten.TabIndex = 1;
+            this.btnMainMoveAtten.Text = "추가/수정";
+            this.btnMainMoveAtten.UseVisualStyleBackColor = true;
+            this.btnMainMoveAtten.Click += new System.EventHandler(this.btnMainMoveAtten_Click);
+            // 
+            // Main
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Form1";
+            this.ClientSize = new System.Drawing.Size(700, 360);
+            this.Controls.Add(this.btnMainMoveAtten);
+            this.Controls.Add(this.lBMainStudents);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "Main";
             this.Text = "학생 정보 관리 시스템";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -38,6 +62,9 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox lBMainStudents;
+        private System.Windows.Forms.Button btnMainMoveAtten;
     }
 }
 
