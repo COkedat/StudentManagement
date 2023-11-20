@@ -99,7 +99,7 @@ namespace StudentManagement {
         private void btnMainMoveDraw_Click(object sender, EventArgs e) {
             Draw drawForm = new Draw(this);
             drawForm.GroupsAssigned += UpdateGroups; //이벤트 핸들러 등록
-            drawForm.Show();
+            drawForm.ShowDialog();
             autoUpdate();
         }
 

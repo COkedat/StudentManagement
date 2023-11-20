@@ -122,7 +122,7 @@
             this.Controls.Add(this.checkNoAbsent);
             this.Controls.Add(this.panel1);
             this.Name = "Atten";
-            this.Text = "출석 관리 시스템";
+            this.Text = "출석 관리";
             this.Load += new System.EventHandler(this.Atten_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
