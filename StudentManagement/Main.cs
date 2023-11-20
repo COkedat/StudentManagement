@@ -45,7 +45,7 @@ namespace StudentManagement {
             }
         }
 
-        // sample students.json maker
+        // students.json 예제 생성기
         private void InitializeStudentsJson() {
             string json;
 
@@ -68,6 +68,14 @@ namespace StudentManagement {
         private void btnMainMoveAtten_Click(object sender, EventArgs e) {
             Atten attenForm = new Atten();
             attenForm.Show();
+        }
+
+        // 정보 변경 시마다 Id를 최신화 시키는 함수
+        // 인덱스 번호를 기준으로 동기화 시킴 ( 인덱스 번호 +1 )
+        private void autoIdxtoId() {
+            for(int i=0; i<students.Count; i++) {
+                students[i].Id = i + 1;
+            }
         }
     }
 
