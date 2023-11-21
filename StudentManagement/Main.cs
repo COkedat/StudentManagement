@@ -65,10 +65,10 @@ namespace StudentManagement {
             File.WriteAllText("students.json", json);
         }
 
-
         private void btnMainMoveAdd_Click(object sender, EventArgs e) {
             // 추가 시
-
+            Edit edit = new Edit(this,students.Count+1);
+            edit.Show();
         }
         private void btnMainMoveEdit_Click(object sender, EventArgs e) {
             // 수정 시
@@ -76,7 +76,7 @@ namespace StudentManagement {
         }
 
         // 정보 변경 시마다 정보를 최신화 시키는 함수
-        private void autoUpdate() {
+        public void autoUpdate() {
             // 인덱스 번호를 기준으로 동기화 시킴 ( 인덱스 번호 +1 )
             for (int i=0; i<students.Count; i++) {
                 students[i].Id = i + 1;
@@ -87,6 +87,9 @@ namespace StudentManagement {
             foreach (var student in students) {
                 lBMainStudents.Items.Add(student.ToString());
             }
+
+            // 데이터 동기화
+            SyncJsonFile();
         }
 
         private void editGrade_Click(object sender, EventArgs e) {
@@ -140,7 +143,11 @@ namespace StudentManagement {
             autoUpdate();
         }
 
-        
+        private void SyncJsonFile()
+        {
+            string json = JsonSerializer.Serialize(students, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText("students.json", json);
+        }
     }
 
     // 학생 클래스

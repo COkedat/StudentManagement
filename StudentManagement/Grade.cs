@@ -46,9 +46,11 @@ namespace StudentManagement {
 
                 // 변경 내역 보고
                 labelChanged.Text = main.students[selectedIdx].Name + " 학생의 점수가 \n저장되었습니다.";
+                main.autoUpdate();
             }
             else
                 MessageBox.Show("점수 변경 내역이 없습니다!", "알림", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e) {

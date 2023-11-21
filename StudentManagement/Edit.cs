@@ -8,14 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StudentManagement {
-    public partial class Edit : Form {
-        public Edit() {
+namespace StudentManagement
+{
+    public partial class Edit : Form
+    {
+
+        private Main mainForm;
+        private int index;
+
+        public Edit(Main mainForm, int index)
+        {
             InitializeComponent();
+            this.mainForm = mainForm;
+            this.index = index;
         }
 
-        private void btnSave_Click(object sender, EventArgs e) {
+        private void btnSave_Click(object sender, EventArgs e)
+        {
             // 저장 버튼
+            mainForm.students.Add(new Student(index, textName.Text));
+            mainForm.autoUpdate();
         }
     }
 }
