@@ -35,19 +35,17 @@
             // lBMainStudents
             // 
             this.lBMainStudents.FormattingEnabled = true;
-            this.lBMainStudents.ItemHeight = 15;
-            this.lBMainStudents.Location = new System.Drawing.Point(14, 48);
-            this.lBMainStudents.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lBMainStudents.ItemHeight = 12;
+            this.lBMainStudents.Location = new System.Drawing.Point(12, 38);
             this.lBMainStudents.Name = "lBMainStudents";
-            this.lBMainStudents.Size = new System.Drawing.Size(622, 319);
+            this.lBMainStudents.Size = new System.Drawing.Size(545, 256);
             this.lBMainStudents.TabIndex = 0;
             // 
             // btnMainMoveAdd
             // 
-            this.btnMainMoveAdd.Location = new System.Drawing.Point(643, 48);
-            this.btnMainMoveAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnMainMoveAdd.Location = new System.Drawing.Point(563, 38);
             this.btnMainMoveAdd.Name = "btnMainMoveAdd";
-            this.btnMainMoveAdd.Size = new System.Drawing.Size(143, 29);
+            this.btnMainMoveAdd.Size = new System.Drawing.Size(125, 23);
             this.btnMainMoveAdd.TabIndex = 1;
             this.btnMainMoveAdd.Text = "추가";
             this.btnMainMoveAdd.UseVisualStyleBackColor = true;
@@ -55,10 +53,9 @@
             // 
             // editGrade
             // 
-            this.editGrade.Location = new System.Drawing.Point(643, 156);
-            this.editGrade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.editGrade.Location = new System.Drawing.Point(563, 125);
             this.editGrade.Name = "editGrade";
-            this.editGrade.Size = new System.Drawing.Size(143, 29);
+            this.editGrade.Size = new System.Drawing.Size(125, 23);
             this.editGrade.TabIndex = 1;
             this.editGrade.Text = "성적 관리";
             this.editGrade.UseVisualStyleBackColor = true;
@@ -66,10 +63,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(643, 193);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Location = new System.Drawing.Point(563, 154);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 29);
+            this.button1.Size = new System.Drawing.Size(125, 23);
             this.button1.TabIndex = 1;
             this.button1.Text = "출석 관리";
             this.button1.UseVisualStyleBackColor = true;
@@ -77,10 +73,9 @@
             // 
             // btnDraw
             // 
-            this.btnDraw.Location = new System.Drawing.Point(643, 230);
-            this.btnDraw.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDraw.Location = new System.Drawing.Point(563, 184);
             this.btnDraw.Name = "btnDraw";
-            this.btnDraw.Size = new System.Drawing.Size(143, 29);
+            this.btnDraw.Size = new System.Drawing.Size(125, 23);
             this.btnDraw.TabIndex = 1;
             this.btnDraw.Text = "추첨";
             this.btnDraw.UseVisualStyleBackColor = true;
@@ -88,10 +83,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(643, 122);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDelete.Location = new System.Drawing.Point(563, 98);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(143, 29);
+            this.btnDelete.Size = new System.Drawing.Size(125, 23);
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "삭제";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -99,10 +93,9 @@
             // 
             // btnMainMoveEdit
             // 
-            this.btnMainMoveEdit.Location = new System.Drawing.Point(642, 85);
-            this.btnMainMoveEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnMainMoveEdit.Location = new System.Drawing.Point(562, 68);
             this.btnMainMoveEdit.Name = "btnMainMoveEdit";
-            this.btnMainMoveEdit.Size = new System.Drawing.Size(143, 29);
+            this.btnMainMoveEdit.Size = new System.Drawing.Size(125, 23);
             this.btnMainMoveEdit.TabIndex = 1;
             this.btnMainMoveEdit.Text = "수정";
             this.btnMainMoveEdit.UseVisualStyleBackColor = true;
@@ -110,9 +103,9 @@
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(700, 360);
             this.Controls.Add(this.btnDraw);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.editGrade);

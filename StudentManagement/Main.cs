@@ -10,11 +10,13 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace StudentManagement {
 
 
     public partial class Main : Form {
+        Main_add addForm;
         public List<Student> students;
         public Main() {
             InitializeComponent();
@@ -22,10 +24,11 @@ namespace StudentManagement {
 
         private void Form1_Load(object sender, EventArgs e) {
             students = GetStudents();
-
+            
             if (students == null) {
                 InitializeStudentsJson();                                             // make sample json
                 students = GetStudents();
+                
             }
 
             foreach (var student in students) {
@@ -35,7 +38,7 @@ namespace StudentManagement {
 
         private List<Student> GetStudents() {
             try {
-                string jsonFromFile = File.ReadAllText("students.json");            // get some file
+                string jsonFromFile = File.ReadAllText("students.json");// get some file
                 return JsonSerializer.Deserialize<List<Student>>(jsonFromFile);
             }
             catch (Exception ex)                                                    // no file | deserialize failed
@@ -65,14 +68,20 @@ namespace StudentManagement {
             File.WriteAllText("students.json", json);
         }
 
-
         private void btnMainMoveAdd_Click(object sender, EventArgs e) {
             // 추가 시
+            addForm = new Main_add(ref students, "add");
+            addForm.autoUpdate += new Main_add.DataPassEventHandler(autoUpdate);
+            addForm.Show();
 
         }
         private void btnMainMoveEdit_Click(object sender, EventArgs e) {
             // 수정 시
-
+            Student editTarget = students[lBMainStudents.SelectedIndex];
+            Console.WriteLine(editTarget);
+            addForm = new Main_add(ref editTarget, "edit");
+            addForm.autoUpdate += new Main_add.DataPassEventHandler(autoUpdate);
+            addForm.Show();
         }
 
         // 정보 변경 시마다 정보를 최신화 시키는 함수
@@ -87,6 +96,10 @@ namespace StudentManagement {
             foreach (var student in students) {
                 lBMainStudents.Items.Add(student.ToString());
             }
+
+            // json Update
+            string json = JsonSerializer.Serialize(students, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText("students.json", json);
         }
 
         private void editGrade_Click(object sender, EventArgs e) {
@@ -107,7 +120,6 @@ namespace StudentManagement {
             drawForm.ShowDialog();
             autoUpdate();
         }
-
         // 이벤트 핸들러
         private void UpdateGroups(List<Student> updatedStudents) {
             // 학생들의 조 정보 업데이트
