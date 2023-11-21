@@ -1,5 +1,5 @@
 ﻿namespace StudentManagement {
-    partial class Edit {
+    partial class Add {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -61,9 +61,9 @@
             this.label2.Font = new System.Drawing.Font("굴림", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.Location = new System.Drawing.Point(40, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(209, 28);
+            this.label2.Size = new System.Drawing.Size(138, 28);
             this.label2.TabIndex = 3;
-            this.label2.Text = "학생 추가/수정";
+            this.label2.Text = "학생 추가";
             // 
             // Edit
             // 
@@ -75,7 +75,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSave);
             this.Name = "Edit";
-            this.Text = "학생 추가/수정";
+            this.Text = "학생 추가";
             this.ResumeLayout(false);
             this.PerformLayout();
 

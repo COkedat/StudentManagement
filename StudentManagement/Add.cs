@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace StudentManagement
 {
-    public partial class Edit : Form
+    public partial class Add : Form
     {
 
         private Main mainForm;
         private int index;
 
-        public Edit(Main mainForm, int index)
+        public Add(Main mainForm, int index)
         {
             InitializeComponent();
             this.mainForm = mainForm;

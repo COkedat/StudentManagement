@@ -13,6 +13,7 @@ namespace StudentManagement {
     public partial class Grade : Form {
         Main main;
         int tmpKor, tmpEng, tmpMath, tmpSocial, tmpSci;
+        String tmpName = " ";
         int selectedIdx;
         public Grade() {
             InitializeComponent();
@@ -38,6 +39,7 @@ namespace StudentManagement {
             // 점수들 중 변경된 점수를 클래스에 저장
             // 변경여부 확인
             if (isChanged()) { // 변경이 있었다면 최신화
+                tmpName = main.students[selectedIdx].Name = textBoxName.Text;
                 tmpKor = main.students[selectedIdx].Kor = ((int)numericScoreKor.Value);
                 tmpEng = main.students[selectedIdx].Eng = ((int)numericScoreEng.Value);
                 tmpMath = main.students[selectedIdx].Math = ((int)numericScoreMath.Value);
@@ -73,6 +75,7 @@ namespace StudentManagement {
 
             // 선택된 학생의 점수들을 입력 창에 띄움
             // 임시 점수 변수에도 저장
+            tmpName = textBoxName.Text = main.students[selectedIdx].Name;
             numericScoreKor.Value = tmpKor = main.students[selectedIdx].Kor;
             numericScoreEng.Value = tmpEng = main.students[selectedIdx].Eng;
             numericScoreMath.Value = tmpMath = main.students[selectedIdx].Math;
@@ -81,18 +84,19 @@ namespace StudentManagement {
 
 
             // 입력 활성화
+            textBoxName.Enabled = true;
             numericScoreKor.Enabled = true;
             numericScoreEng.Enabled = true;
             numericScoreMath.Enabled = true;
             numericScoreSocial.Enabled = true;
             numericScoreSci.Enabled = true;
-
         }
 
         // 값의 변화가 있었는지 체크하는 함수
         private bool isChanged() {
             // 모두 동일시 false
-            if (numericScoreKor.Value == tmpKor &&
+            if (textBoxName.Text == tmpName &&
+                numericScoreKor.Value == tmpKor &&
                 numericScoreEng.Value == tmpEng &&
                 numericScoreMath.Value == tmpMath &&
                 numericScoreSocial.Value == tmpSocial &&

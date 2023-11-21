@@ -67,7 +67,7 @@ namespace StudentManagement {
 
         private void btnMainMoveAdd_Click(object sender, EventArgs e) {
             // 추가 시
-            Edit edit = new Edit(this,students.Count+1);
+            Add edit = new Add(this,students.Count+1);
             edit.Show();
         }
         private void btnMainMoveEdit_Click(object sender, EventArgs e) {
