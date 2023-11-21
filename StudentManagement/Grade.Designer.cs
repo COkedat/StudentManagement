@@ -142,7 +142,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(205, 128);
+            this.panel1.Location = new System.Drawing.Point(205, 140);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(184, 244);
             this.panel1.TabIndex = 5;
@@ -200,7 +200,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(205, 382);
+            this.label8.Location = new System.Drawing.Point(205, 394);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 15);
             this.label8.TabIndex = 6;
@@ -209,7 +209,7 @@
             // labelChanged
             // 
             this.labelChanged.AutoSize = true;
-            this.labelChanged.Location = new System.Drawing.Point(205, 405);
+            this.labelChanged.Location = new System.Drawing.Point(205, 417);
             this.labelChanged.Name = "labelChanged";
             this.labelChanged.Size = new System.Drawing.Size(0, 15);
             this.labelChanged.TabIndex = 6;
@@ -217,7 +217,7 @@
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(13, 51);
+            this.labelName.Location = new System.Drawing.Point(13, 58);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(37, 15);
             this.labelName.TabIndex = 7;
@@ -226,7 +226,7 @@
             // textBoxName
             // 
             this.textBoxName.Enabled = false;
-            this.textBoxName.Location = new System.Drawing.Point(61, 46);
+            this.textBoxName.Location = new System.Drawing.Point(61, 53);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(100, 25);
             this.textBoxName.TabIndex = 8;
@@ -239,7 +239,7 @@
             this.panel2.Controls.Add(this.label9);
             this.panel2.Location = new System.Drawing.Point(205, 43);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(183, 77);
+            this.panel2.Size = new System.Drawing.Size(183, 91);
             this.panel2.TabIndex = 9;
             // 
             // label9
