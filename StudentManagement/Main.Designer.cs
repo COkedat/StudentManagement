@@ -39,6 +39,7 @@
             this.lV_Atten = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lV_Absent = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lV_Group = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnMainMoveAdd
@@ -54,18 +55,18 @@
             // 
             // editGrade
             // 
-            this.editGrade.Location = new System.Drawing.Point(643, 85);
+            this.editGrade.Location = new System.Drawing.Point(643, 159);
             this.editGrade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.editGrade.Name = "editGrade";
             this.editGrade.Size = new System.Drawing.Size(143, 29);
             this.editGrade.TabIndex = 1;
-            this.editGrade.Text = "수정";
+            this.editGrade.Text = "성적 관리";
             this.editGrade.UseVisualStyleBackColor = true;
             this.editGrade.Click += new System.EventHandler(this.editGrade_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(643, 159);
+            this.button1.Location = new System.Drawing.Point(643, 196);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(143, 29);
@@ -76,7 +77,7 @@
             // 
             // btnDraw
             // 
-            this.btnDraw.Location = new System.Drawing.Point(643, 196);
+            this.btnDraw.Location = new System.Drawing.Point(643, 233);
             this.btnDraw.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDraw.Name = "btnDraw";
             this.btnDraw.Size = new System.Drawing.Size(143, 29);
@@ -160,6 +161,17 @@
             // 
             this.lV_Group.Text = "조";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(643, 85);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(143, 29);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "수정";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnMainMoveEdit_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -168,6 +180,7 @@
             this.Controls.Add(this.lVMainStudents);
             this.Controls.Add(this.btnDraw);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.editGrade);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnMainMoveAdd);
@@ -196,6 +209,7 @@
         private System.Windows.Forms.ColumnHeader lV_Atten;
         private System.Windows.Forms.ColumnHeader lV_Absent;
         private System.Windows.Forms.ColumnHeader lV_Group;
+        private System.Windows.Forms.Button button2;
     }
 }
 

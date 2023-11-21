@@ -9,11 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-namespace StudentManagement
-{
+namespace StudentManagement {
 
-    public partial class Main_add : Form
-    {
+    public partial class Main_add : Form {
         List<Student> students = null;
         Student editTarget;
         //델리게이트
@@ -23,33 +21,28 @@ namespace StudentManagement
         public event DataPassEventHandler autoUpdate;
 
         string mode; // "add" or "edit"
-        public Main_add()
-        {
+        public Main_add() {
             InitializeComponent();
         }
-        public Main_add(ref List<Student> data, string mode)
-        {
+        public Main_add(ref List<Student> data, string mode) {
             InitializeComponent();
 
             students = data;
             this.mode = mode;
         }
-        public Main_add(ref Student data, string mode)
-        {
+        public Main_add(ref Student data, string mode) {
             InitializeComponent();
 
             editTarget = data;
             this.mode = mode;
         }
 
-        private void Main_add_Load(object sender, EventArgs e)
-        {
-            if(mode == "add")
-            {
+        private void Main_add_Load(object sender, EventArgs e) {
+            if (mode == "add") {
                 int len = students.Count;
                 textBox1.Text = (students[len - 1].Id + 1).ToString();
-            } else if(mode == "edit")
-            {
+            }
+            else if (mode == "edit") {
                 textBox1.Text = editTarget.Id.ToString();
                 textBox2.Text = editTarget.Name.ToString();
                 textBox3.Text = editTarget.Kor.ToString();
@@ -63,61 +56,50 @@ namespace StudentManagement
             }
 
         }
-        private void errorCheck()
-        {
-            if (textBox1.Text == "")
-            {
+        private bool errorCheck() {
+            if (textBox1.Text == "") {
                 MessageBox.Show("번호을 입력해주세요.", "입력 에러", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return true;
             }
-            else if (textBox2.Text == "")
-            {
+            else if (textBox2.Text == "") {
                 MessageBox.Show("이름을 입력해주세요.", "입력 에러", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return true;
             }
-            else if (textBox3.Text == "")
-            {
+            else if (textBox3.Text == "") {
                 MessageBox.Show("국어점수를 입력해주세요.", "입력 에러", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return true;
             }
-            else if (textBox4.Text == "")
-            {
+            else if (textBox4.Text == "") {
                 MessageBox.Show("영어점수를 입력해주세요.", "입력 에러", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return true;
             }
-            else if (textBox5.Text == "")
-            {
+            else if (textBox5.Text == "") {
                 MessageBox.Show("수학점수를 입력해주세요.", "입력 에러", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return true;
             }
-            else if (textBox6.Text == "")
-            {
+            else if (textBox6.Text == "") {
                 MessageBox.Show("사회점수를 입력해주세요.", "입력 에러", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return true;
             }
-            else if (textBox7.Text == "")
-            {
+            else if (textBox7.Text == "") {
                 MessageBox.Show("과학점수를 입력해주세요.", "입력 에러", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return true;
             }
-            else if (textBox8.Text == "")
-            {
+            else if (textBox8.Text == "") {
                 MessageBox.Show("출석을 입력해주세요.", "입력 에러", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return true;
             }
-            else if (textBox9.Text == "")
-            {
+            else if (textBox9.Text == "") {
                 MessageBox.Show("결석을 입력해주세요.", "입력 에러", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return true;
             }
-            else if (textBox10.Text == "")
-            {
+            else if (textBox10.Text == "") {
                 MessageBox.Show("조를 입력해주세요.", "입력 에러", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return true;
             }
+            return false;
         }
-        private void add()
-        {
+        private void add() {
             int id = int.Parse(textBox1.Text);
             string name = textBox2.Text;
             int kor = int.Parse(textBox3.Text);
@@ -130,8 +112,7 @@ namespace StudentManagement
             int group = int.Parse(textBox10.Text);
             students.Add(new Student(id, name, kor, eng, math, social, sci, atten, absent, group));
         }
-        private void edit()
-        {
+        private void edit() {
             editTarget.Id = int.Parse(textBox1.Text);
             editTarget.Name = textBox2.Text;
             editTarget.Kor = int.Parse(textBox3.Text);
@@ -143,14 +124,12 @@ namespace StudentManagement
             editTarget.Absent = int.Parse(textBox9.Text);
             editTarget.Group = int.Parse(textBox10.Text);
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            errorCheck();
-            if (mode == "add")
-            {
+        private void button1_Click(object sender, EventArgs e) {
+            if (errorCheck()) return;
+            if (mode == "add") {
                 add();
-            } else if (mode == "edit")
-            {
+            }
+            else if (mode == "edit") {
                 edit();
             }
             autoUpdate();

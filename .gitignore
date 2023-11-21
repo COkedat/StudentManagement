@@ -3,3 +3,5 @@
 .obj/
 StudentManagement/obj/
 StudentManagement/bin/
+*.cache
+.vs/StudentManagement/v17/.suo

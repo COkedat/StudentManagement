@@ -11,6 +11,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Diagnostics.Eventing.Reader;
 
 namespace StudentManagement {
 
@@ -90,12 +91,20 @@ namespace StudentManagement {
 
         private void btnMainMoveAdd_Click(object sender, EventArgs e) {
             // 추가 시
-            Add edit = new Add(this,students.Count+1);
-            edit.Show();
+            Main_add addForm = new Main_add(ref students, "add");
+            addForm.autoUpdate += new Main_add.DataPassEventHandler(autoUpdate);
+            addForm.Show();
         }
         private void btnMainMoveEdit_Click(object sender, EventArgs e) {
             // 수정 시
+            // 학생 한명만 선택하도록 함
+            if (lVMainStudents.SelectedIndices.Count == 0 || lVMainStudents.SelectedIndices.Count > 1) return;
+            Student editTarget = students[lVMainStudents.SelectedIndices[0]];
 
+            Console.WriteLine(editTarget);
+            Main_add addForm = new Main_add(ref editTarget, "edit");
+            addForm.autoUpdate += new Main_add.DataPassEventHandler(autoUpdate);
+            addForm.Show();
         }
 
         // 정보 변경 시마다 정보를 최신화 시키는 함수
