@@ -10,6 +10,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace StudentManagement {
 
@@ -22,6 +23,11 @@ namespace StudentManagement {
 
         private void Form1_Load(object sender, EventArgs e) {
             students = GetStudents();
+            ListViewItem item;
+            lVMainStudents.BeginUpdate();
+
+            // 뷰모드 지정
+            lVMainStudents.View = View.Details;
 
             if (students == null) {
                 InitializeStudentsJson();                                             // make sample json
@@ -29,8 +35,25 @@ namespace StudentManagement {
             }
 
             foreach (var student in students) {
-                lBMainStudents.Items.Add(student.ToString());
+                item = GetListViewStudent(student);
+                lVMainStudents.Items.Add(item);
             }
+            lVMainStudents.EndUpdate();
+        }
+
+        private ListViewItem GetListViewStudent(Student student) {
+            // 학생 정보를 리스트뷰 아이템을 변환
+            ListViewItem tmpItem = new ListViewItem(student.Id.ToString());
+            tmpItem.SubItems.Add(student.Name);
+            tmpItem.SubItems.Add(student.Kor.ToString());
+            tmpItem.SubItems.Add(student.Eng.ToString());
+            tmpItem.SubItems.Add(student.Math.ToString());
+            tmpItem.SubItems.Add(student.Social.ToString());
+            tmpItem.SubItems.Add(student.Sci.ToString());
+            tmpItem.SubItems.Add(student.Atten.ToString());
+            tmpItem.SubItems.Add(student.Absent.ToString());
+            tmpItem.SubItems.Add(student.Group.ToString());
+            return tmpItem;
         }
 
         private List<Student> GetStudents() {
@@ -77,16 +100,21 @@ namespace StudentManagement {
 
         // 정보 변경 시마다 정보를 최신화 시키는 함수
         public void autoUpdate() {
+            ListViewItem item;
+
             // 인덱스 번호를 기준으로 동기화 시킴 ( 인덱스 번호 +1 )
             for (int i=0; i<students.Count; i++) {
                 students[i].Id = i + 1;
             }
 
             // 학생 정보 최신화
-            lBMainStudents.Items.Clear();
+            lVMainStudents.BeginUpdate();
+            lVMainStudents.Items.Clear();
             foreach (var student in students) {
-                lBMainStudents.Items.Add(student.ToString());
+                item = GetListViewStudent(student);
+                lVMainStudents.Items.Add(item);
             }
+            lVMainStudents.EndUpdate();
 
             // 데이터 동기화
             SyncJsonFile();
@@ -113,22 +141,35 @@ namespace StudentManagement {
 
         // 이벤트 핸들러
         private void UpdateGroups(List<Student> updatedStudents) {
+            ListViewItem item;
             // 학생들의 조 정보 업데이트
             students = updatedStudents;
 
-            // 업데이트된 정보로 ListBox 갱신
-            lBMainStudents.Items.Clear();
+            // 학생 정보 최신화
+            lVMainStudents.BeginUpdate();
+            lVMainStudents.Items.Clear();
             foreach (var student in students) {
-                lBMainStudents.Items.Add(student.ToString());
+                item = GetListViewStudent(student);
+                lVMainStudents.Items.Add(item);
             }
+            lVMainStudents.EndUpdate();
+
+            // 데이터 동기화
+            SyncJsonFile();
         }
 
         private void btnDelete_Click(object sender, EventArgs e) {
-            if (lBMainStudents.SelectedIndex != -1) {
+            if (lVMainStudents.SelectedIndices.Count > 0) {
                 DialogResult dialogResult = MessageBox.Show("선택된 학생을 목록에서 제거하시겠습니까?", "알림", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 //OK 클릭할 경우 그냥 진행
                 if (dialogResult == DialogResult.OK) {
-                    students.RemoveAt(lBMainStudents.SelectedIndex);
+                    // 리스트 뒤집어서 제거해줘야함
+                    List<int> tmpList = new List<int>();
+                    foreach (int idx in lVMainStudents.SelectedIndices) {tmpList.Add(idx); }
+                    tmpList.Reverse();
+                    foreach (int idx in tmpList) {
+                        students.RemoveAt(idx);
+                    }
                     MessageBox.Show("선택된 학생이 목록에서 제거되었습니다!", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 //Cancel 클릭 시
