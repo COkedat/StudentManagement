@@ -44,7 +44,7 @@ namespace StudentManagement {
         private void button2_Click(object sender, EventArgs e)
         {
             // 이벤트 발생
-            GroupsAssigned?.Invoke(students);
+            //GroupsAssigned?.Invoke(students);
             Close();
         }
 
