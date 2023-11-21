@@ -75,7 +75,7 @@
             // btnScoreSave
             // 
             this.btnScoreSave.Enabled = false;
-            this.btnScoreSave.Location = new System.Drawing.Point(48, 217);
+            this.btnScoreSave.Location = new System.Drawing.Point(48, 211);
             this.btnScoreSave.Name = "btnScoreSave";
             this.btnScoreSave.Size = new System.Drawing.Size(75, 23);
             this.btnScoreSave.TabIndex = 2;
@@ -86,7 +86,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 60);
+            this.label2.Location = new System.Drawing.Point(12, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 15);
             this.label2.TabIndex = 4;
@@ -95,7 +95,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 91);
+            this.label3.Location = new System.Drawing.Point(12, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 15);
             this.label3.TabIndex = 4;
@@ -104,7 +104,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 122);
+            this.label4.Location = new System.Drawing.Point(12, 116);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 15);
             this.label4.TabIndex = 4;
@@ -113,7 +113,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 153);
+            this.label5.Location = new System.Drawing.Point(12, 147);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 15);
             this.label5.TabIndex = 4;
@@ -122,7 +122,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 184);
+            this.label6.Location = new System.Drawing.Point(12, 178);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 15);
             this.label6.TabIndex = 4;
@@ -142,15 +142,15 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(205, 131);
+            this.panel1.Location = new System.Drawing.Point(205, 128);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(184, 255);
+            this.panel1.Size = new System.Drawing.Size(184, 244);
             this.panel1.TabIndex = 5;
             // 
             // numericScoreSci
             // 
             this.numericScoreSci.Enabled = false;
-            this.numericScoreSci.Location = new System.Drawing.Point(57, 179);
+            this.numericScoreSci.Location = new System.Drawing.Point(57, 173);
             this.numericScoreSci.Name = "numericScoreSci";
             this.numericScoreSci.Size = new System.Drawing.Size(95, 25);
             this.numericScoreSci.TabIndex = 6;
@@ -158,7 +158,7 @@
             // numericScoreSocial
             // 
             this.numericScoreSocial.Enabled = false;
-            this.numericScoreSocial.Location = new System.Drawing.Point(57, 148);
+            this.numericScoreSocial.Location = new System.Drawing.Point(57, 142);
             this.numericScoreSocial.Name = "numericScoreSocial";
             this.numericScoreSocial.Size = new System.Drawing.Size(95, 25);
             this.numericScoreSocial.TabIndex = 6;
@@ -166,7 +166,7 @@
             // numericScoreMath
             // 
             this.numericScoreMath.Enabled = false;
-            this.numericScoreMath.Location = new System.Drawing.Point(57, 118);
+            this.numericScoreMath.Location = new System.Drawing.Point(57, 112);
             this.numericScoreMath.Name = "numericScoreMath";
             this.numericScoreMath.Size = new System.Drawing.Size(95, 25);
             this.numericScoreMath.TabIndex = 6;
@@ -174,7 +174,7 @@
             // numericScoreEng
             // 
             this.numericScoreEng.Enabled = false;
-            this.numericScoreEng.Location = new System.Drawing.Point(57, 88);
+            this.numericScoreEng.Location = new System.Drawing.Point(57, 82);
             this.numericScoreEng.Name = "numericScoreEng";
             this.numericScoreEng.Size = new System.Drawing.Size(95, 25);
             this.numericScoreEng.TabIndex = 6;
@@ -182,7 +182,7 @@
             // numericScoreKor
             // 
             this.numericScoreKor.Enabled = false;
-            this.numericScoreKor.Location = new System.Drawing.Point(57, 58);
+            this.numericScoreKor.Location = new System.Drawing.Point(57, 52);
             this.numericScoreKor.Name = "numericScoreKor";
             this.numericScoreKor.Size = new System.Drawing.Size(95, 25);
             this.numericScoreKor.TabIndex = 6;
@@ -191,7 +191,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("굴림", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(7, 17);
+            this.label7.Location = new System.Drawing.Point(7, 11);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(138, 28);
             this.label7.TabIndex = 5;
@@ -200,7 +200,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(205, 393);
+            this.label8.Location = new System.Drawing.Point(205, 382);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 15);
             this.label8.TabIndex = 6;
@@ -209,7 +209,7 @@
             // labelChanged
             // 
             this.labelChanged.AutoSize = true;
-            this.labelChanged.Location = new System.Drawing.Point(205, 416);
+            this.labelChanged.Location = new System.Drawing.Point(205, 405);
             this.labelChanged.Name = "labelChanged";
             this.labelChanged.Size = new System.Drawing.Size(0, 15);
             this.labelChanged.TabIndex = 6;

@@ -29,7 +29,7 @@ namespace StudentManagement {
             listStudents.Items.Clear();
 
             foreach(var student in main.students) {
-                listStudents.Items.Add(student.Name);
+                listStudents.Items.Add(student.Id+" "+student.Name);
             }
             
         }
