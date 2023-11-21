@@ -121,10 +121,12 @@
             // lV_Id
             // 
             this.lV_Id.Text = "번호";
+            this.lV_Id.Width = 45;
             // 
             // lV_Name
             // 
             this.lV_Name.Text = "이름";
+            this.lV_Name.Width = 80;
             // 
             // lV_Kor
             // 
