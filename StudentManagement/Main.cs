@@ -93,7 +93,7 @@ namespace StudentManagement {
             // 추가 시
             Main_add addForm = new Main_add(ref students, "add");
             addForm.autoUpdate += new Main_add.DataPassEventHandler(autoUpdate);
-            addForm.Show();
+            addForm.ShowDialog();
         }
         private void btnMainMoveEdit_Click(object sender, EventArgs e) {
             // 수정 시
@@ -104,7 +104,7 @@ namespace StudentManagement {
             Console.WriteLine(editTarget);
             Main_add addForm = new Main_add(ref editTarget, "edit");
             addForm.autoUpdate += new Main_add.DataPassEventHandler(autoUpdate);
-            addForm.Show();
+            addForm.ShowDialog();
         }
 
         // 정보 변경 시마다 정보를 최신화 시키는 함수
