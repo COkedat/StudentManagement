@@ -107,12 +107,6 @@
     <Compile Include="Grade.Designer.cs">
       <DependentUpon>Grade.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main_edit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Main_edit.Designer.cs">
-      <DependentUpon>Main_edit.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Atten.resx">

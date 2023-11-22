@@ -40,6 +40,8 @@
             this.lV_Absent = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lV_Group = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button2 = new System.Windows.Forms.Button();
+            this.btnUp = new System.Windows.Forms.Button();
+            this.btnDown = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnMainMoveAdd
@@ -172,11 +174,33 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.btnMainMoveEdit_Click);
             // 
+            // btnUp
+            // 
+            this.btnUp.Location = new System.Drawing.Point(644, 314);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(27, 23);
+            this.btnUp.TabIndex = 3;
+            this.btnUp.Text = "↑";
+            this.btnUp.UseVisualStyleBackColor = true;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
+            // 
+            // btnDown
+            // 
+            this.btnDown.Location = new System.Drawing.Point(644, 343);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(27, 23);
+            this.btnDown.TabIndex = 3;
+            this.btnDown.Text = "↓";
+            this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDown);
+            this.Controls.Add(this.btnUp);
             this.Controls.Add(this.lVMainStudents);
             this.Controls.Add(this.btnDraw);
             this.Controls.Add(this.button1);
@@ -210,6 +234,8 @@
         private System.Windows.Forms.ColumnHeader lV_Absent;
         private System.Windows.Forms.ColumnHeader lV_Group;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnUp;
+        private System.Windows.Forms.Button btnDown;
     }
 }
 

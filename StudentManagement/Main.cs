@@ -202,6 +202,47 @@ namespace StudentManagement {
             string json = JsonSerializer.Serialize(students, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText("students.json", json);
         }
+
+        private void btnUp_Click(object sender, EventArgs e) {
+            if (lVMainStudents.SelectedIndices.Count == 0 || lVMainStudents.SelectedIndices.Count > 1) {
+                MessageBox.Show("한 명의 학생을 선택해주세요!", "알림", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            // 범위 벗어나는지 확인
+            if (lVMainStudents.SelectedIndices[0] <= 0 || students.Count <= 1) return;
+            int selected = lVMainStudents.SelectedIndices[0];
+
+            // 위치 변경
+            Student tmpTarget = students[selected - 1];
+            students[selected - 1] = students[selected];
+            students[selected] = tmpTarget;
+
+            // 갱신
+            autoUpdate();
+            lVMainStudents.Items[selected - 1].Focused = true;
+            lVMainStudents.Items[selected - 1].Selected = true;
+        }
+
+        private void btnDown_Click(object sender, EventArgs e) {
+            if (lVMainStudents.SelectedIndices.Count == 0 || lVMainStudents.SelectedIndices.Count > 1) {
+                MessageBox.Show("한 명의 학생을 선택해주세요!", "알림", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            
+            // 범위 벗어나는지 확인
+            if (lVMainStudents.SelectedIndices[0] >= students.Count - 1 || students.Count <= 1) return;
+            int selected = lVMainStudents.SelectedIndices[0];
+
+            // 위치 변경
+            Student tmpTarget = students[selected + 1];
+            students[selected + 1] = students[selected];
+            students[selected] = tmpTarget;
+
+            // 갱신
+            autoUpdate();
+            lVMainStudents.Items[selected + 1].Focused = true;
+            lVMainStudents.Items[selected + 1].Selected = true;
+        }
     }
 
     // 학생 클래스
