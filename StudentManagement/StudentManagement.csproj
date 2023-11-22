@@ -89,12 +89,6 @@
     <Compile Include="Draw.Designer.cs">
       <DependentUpon>Draw.cs</DependentUpon>
     </Compile>
-    <Compile Include="Add.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Add.Designer.cs">
-      <DependentUpon>Add.cs</DependentUpon>
-    </Compile>
     <Compile Include="Main_add.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,9 +120,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Draw.resx">
       <DependentUpon>Draw.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Add.resx">
-      <DependentUpon>Add.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grade.resx">
       <DependentUpon>Grade.cs</DependentUpon>
