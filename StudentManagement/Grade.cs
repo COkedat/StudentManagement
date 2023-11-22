@@ -84,7 +84,7 @@ namespace StudentManagement {
 
 
             // 입력 활성화
-            textBoxName.Enabled = true;
+            //textBoxName.Enabled = true;
             numericScoreKor.Enabled = true;
             numericScoreEng.Enabled = true;
             numericScoreMath.Enabled = true;
