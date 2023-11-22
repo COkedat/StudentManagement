@@ -98,7 +98,11 @@ namespace StudentManagement {
         private void btnMainMoveEdit_Click(object sender, EventArgs e) {
             // 수정 시
             // 학생 한명만 선택하도록 함
-            if (lVMainStudents.SelectedIndices.Count == 0 || lVMainStudents.SelectedIndices.Count > 1) return;
+            if (lVMainStudents.SelectedIndices.Count == 0 || lVMainStudents.SelectedIndices.Count > 1) {
+                MessageBox.Show("한 명의 학생을 선택해주세요!", "알림", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; 
+            }
+
             Student editTarget = students[lVMainStudents.SelectedIndices[0]];
 
             Console.WriteLine(editTarget);
