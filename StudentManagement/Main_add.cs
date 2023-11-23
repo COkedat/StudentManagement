@@ -39,10 +39,13 @@ namespace StudentManagement {
 
         private void Main_add_Load(object sender, EventArgs e) {
             if (mode == "add") {
+                this.Text = "학생 추가";
+
                 int len = students.Count;
                 textBox1.Text = (students[len - 1].Id + 1).ToString();
             }
             else if (mode == "edit") {
+                this.Text = "학생 수정";
 
                 textBox1.Text = editTarget.Id.ToString();
                 textBox2.Text = editTarget.Name.ToString();
