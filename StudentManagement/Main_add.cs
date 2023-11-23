@@ -43,6 +43,7 @@ namespace StudentManagement {
                 textBox1.Text = (students[len - 1].Id + 1).ToString();
             }
             else if (mode == "edit") {
+
                 textBox1.Text = editTarget.Id.ToString();
                 textBox2.Text = editTarget.Name.ToString();
                 textBox3.Text = editTarget.Kor.ToString();
@@ -53,6 +54,14 @@ namespace StudentManagement {
                 textBox8.Text = editTarget.Atten.ToString();
                 textBox9.Text = editTarget.Absent.ToString();
                 textBox10.Text = editTarget.Group.ToString();
+
+                // 비활성화 추가
+                // 성적 관리에서 수정할 수 있도록
+                textBox3.Enabled = false;
+                textBox4.Enabled = false;
+                textBox5.Enabled = false;
+                textBox6.Enabled = false;
+                textBox7.Enabled = false;
             }
 
         }
