@@ -249,6 +249,11 @@ namespace StudentManagement {
             SaveAndLoad saveAndLaoadForm = new SaveAndLoad(this);
             saveAndLaoadForm.ShowDialog();
         }
+
+        private void 만든사람들ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("19장근하(팀장), 20정재혁, 20정의찬,21양승진");
+        }
     }
 
     // 학생 클래스

@@ -227,6 +227,7 @@
             this.만든사람들ToolStripMenuItem.Name = "만든사람들ToolStripMenuItem";
             this.만든사람들ToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.만든사람들ToolStripMenuItem.Text = "만든 사람들(&P)";
+            this.만든사람들ToolStripMenuItem.Click += new System.EventHandler(this.만든사람들ToolStripMenuItem_Click);
             // 
             // Main
             // 
