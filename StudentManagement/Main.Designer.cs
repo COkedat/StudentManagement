@@ -42,6 +42,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnUp = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.옵션OToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.저장및불러오기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.만든사람들ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnMainMoveAdd
@@ -191,6 +196,38 @@
             this.btnDown.UseVisualStyleBackColor = true;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.옵션OToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(700, 24);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 옵션OToolStripMenuItem
+            // 
+            this.옵션OToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.저장및불러오기ToolStripMenuItem,
+            this.만든사람들ToolStripMenuItem});
+            this.옵션OToolStripMenuItem.Name = "옵션OToolStripMenuItem";
+            this.옵션OToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.옵션OToolStripMenuItem.Text = "옵션(&O)";
+            // 
+            // 저장및불러오기ToolStripMenuItem
+            // 
+            this.저장및불러오기ToolStripMenuItem.Name = "저장및불러오기ToolStripMenuItem";
+            this.저장및불러오기ToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.저장및불러오기ToolStripMenuItem.Text = "저장 및 불러오기(&S)";
+            this.저장및불러오기ToolStripMenuItem.Click += new System.EventHandler(this.저장및불러오기ToolStripMenuItem_Click);
+            // 
+            // 만든사람들ToolStripMenuItem
+            // 
+            this.만든사람들ToolStripMenuItem.Name = "만든사람들ToolStripMenuItem";
+            this.만든사람들ToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.만든사람들ToolStripMenuItem.Text = "만든 사람들(&P)";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -205,11 +242,16 @@
             this.Controls.Add(this.editGrade);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnMainMoveAdd);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Main";
             this.Text = "학생 정보 관리 시스템";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -219,7 +261,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnDraw;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.ListView lVMainStudents;
         private System.Windows.Forms.ColumnHeader lV_Id;
         private System.Windows.Forms.ColumnHeader lV_Name;
         private System.Windows.Forms.ColumnHeader lV_Kor;
@@ -233,6 +274,11 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnUp;
         private System.Windows.Forms.Button btnDown;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 옵션OToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 저장및불러오기ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 만든사람들ToolStripMenuItem;
+        public System.Windows.Forms.ListView lVMainStudents;
     }
 }
 

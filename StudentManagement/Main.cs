@@ -42,7 +42,7 @@ namespace StudentManagement {
             lVMainStudents.EndUpdate();
         }
 
-        private ListViewItem GetListViewStudent(Student student) {
+        public ListViewItem GetListViewStudent(Student student) {
             // 학생 정보를 리스트뷰 아이템을 변환
             ListViewItem tmpItem = new ListViewItem(student.Id.ToString());
             tmpItem.SubItems.Add(student.Name);
@@ -242,6 +242,12 @@ namespace StudentManagement {
             autoUpdate();
             lVMainStudents.Items[selected + 1].Focused = true;
             lVMainStudents.Items[selected + 1].Selected = true;
+        }
+
+        private void 저장및불러오기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveAndLoad saveAndLaoadForm = new SaveAndLoad(this);
+            saveAndLaoadForm.ShowDialog();
         }
     }
 
