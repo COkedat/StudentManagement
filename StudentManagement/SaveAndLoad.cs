@@ -98,6 +98,7 @@ namespace StudentManagement
                 {
                     mF.lVMainStudents.Items.Add(mF.GetListViewStudent(i));
                 }
+                MessageBox.Show("json 파일을 불러오는데 성공했습니다!","알림",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             else
                 MessageBox.Show("먼저 파일을 선택해주세요!");
