@@ -45,6 +45,7 @@ namespace StudentManagement
         {
             string fileName;          
             SaveFileDialog saveFileDialoig = new SaveFileDialog();
+            saveFileDialoig.FileName = "students_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".json"; //초기 파일명을 지정할 때 사용한다.
             saveFileDialoig.Filter = "json 파일(*.json)|*.json|모든 파일 (*.*)|*.*";
 
             if (saveFileDialoig.ShowDialog() == DialogResult.OK)
