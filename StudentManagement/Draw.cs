@@ -51,11 +51,11 @@ namespace StudentManagement {
         private void button1_Click(object sender, EventArgs e)
         {
             listafter.Items.Clear(); //초기화 하지 않은 것을 사전에 방지
-
+            Random random = new Random();
             if (radioButton1.Checked)
             {
                 // radioButton1이 체크된 경우, 무작위로 한 명을 추첨하여 listafter에 추가
-                Random random = new Random();
+                
                 int randomIndex = random.Next(students.Count);
                 Student selectedStudent = students[randomIndex];
                 listafter.Items.Add($"추첨 결과: {selectedStudent.Id}번 {selectedStudent.Name}");
@@ -78,6 +78,21 @@ namespace StudentManagement {
 
                         groupNumber++;
                     }
+                    // 남은 학생들을 랜덤으로 조에 추가
+                    List<Student> remainingStudents = students.Where(s => s.Group == 0).ToList();
+                    while (remainingStudents.Count > 0)
+                    {
+                        int randomGroupIndex = random.Next(groups.Count);
+                        List<Student> randomGroup = groups[randomGroupIndex];
+                        int randomStudentIndex = random.Next(remainingStudents.Count);
+
+                        Student selectedStudent = remainingStudents[randomStudentIndex];
+                        randomGroup.Add(selectedStudent);
+                        remainingStudents.RemoveAt(randomStudentIndex);
+
+                        // 출력
+                        listafter.Items.Add($"{randomGroupIndex + 1}조 {selectedStudent.Id}번 {selectedStudent.Name}");
+                    }
                 }
                 else
                 {
@@ -89,10 +104,16 @@ namespace StudentManagement {
                 // radioButton3이 체크된 경우, textch2에 적힌 수만큼 인원을 추첨하여 listafter에 추가
                 if (int.TryParse(textch2.Text, out int numberOfWinners))
                 {
-                    Random random = new Random();
+                    // 중복 방지를 위해 HashSet 사용
+                    HashSet<int> selected = new HashSet<int>();
                     for (int i = 0; i < numberOfWinners; i++)
                     {
-                        int randomIndex = random.Next(students.Count);
+                        int randomIndex;
+                        do
+                        {
+                            randomIndex = random.Next(students.Count);
+                        } while (!selected.Add(randomIndex));
+
                         Student selectedStudent = students[randomIndex];
                         listafter.Items.Add($"추첨 결과: {selectedStudent.Id}: {selectedStudent.Name}");
                     }
