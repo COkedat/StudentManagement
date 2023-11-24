@@ -99,7 +99,7 @@ namespace StudentManagement
                 }
             }
             else
-                MessageBox.Show("먼저 학생정보를 불러와주세요!");
+                MessageBox.Show("먼저 파일을 선택해주세요!");
         }
     }
 }

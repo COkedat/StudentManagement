@@ -252,7 +252,7 @@ namespace StudentManagement {
 
         private void 만든사람들ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("19장근하(팀장), 20정재혁, 20정의찬,21양승진");
+            MessageBox.Show("19장근하(팀장), 20정재혁, 20정의찬, 21양승진");
         }
     }
 
