@@ -11,8 +11,9 @@ using System.Windows.Forms;
 namespace StudentManagement {
     public partial class Draw : Form {
 
-        // 이벤트 정의
+        /* 이벤트 정의
         public event Action<List<Student>> GroupsAssigned;
+        */
 
         private List<Student> students;
         public Draw(Main main)
