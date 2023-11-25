@@ -151,7 +151,7 @@ namespace StudentManagement {
             drawForm.ShowDialog();
             autoUpdate();
         }
-
+        /*
         // 이벤트 핸들러
         private void UpdateGroups(List<Student> updatedStudents) {
             ListViewItem item;
@@ -170,6 +170,7 @@ namespace StudentManagement {
             // 데이터 동기화
             SyncJsonFile();
         }
+        */
 
         private void btnDelete_Click(object sender, EventArgs e) {
             if (lVMainStudents.SelectedIndices.Count > 0) {
