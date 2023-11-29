@@ -198,8 +198,7 @@ namespace StudentManagement {
             autoUpdate();
         }
 
-        private void SyncJsonFile()
-        {
+        private void SyncJsonFile() {
             string json = JsonSerializer.Serialize(students, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText("students.json", json);
         }
